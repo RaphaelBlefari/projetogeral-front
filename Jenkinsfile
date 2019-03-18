@@ -1,5 +1,8 @@
 node {
 
+    def nodeHome = tool name: 'nodejs', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
+    env.PATH = "${nodeHome}:${nodeHome}/bin:${env.PATH}"
+
     checkout scm
 
     // Pega o commit id para ser usado de tag (versionamento) na imagem
@@ -13,6 +16,14 @@ node {
     
     // Configuramos os estágios
     
+
+    stage('check tools') {
+        echo env.PATH
+        sh "node -v"
+        sh "npm -v"
+        sh "npm i -g @angular/cli"
+        sh "npm rebuild node-sass --force"
+    }
 
     stage "npm install"
 
