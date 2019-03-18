@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+html, body {
+    height: 100%;
+}
+
+.divtop{
+    height: 80px;
+}
+
+.card {
+    max-width: 21rem;
+    min-width: 8rem;
+    min-height: 20rem;
+}
