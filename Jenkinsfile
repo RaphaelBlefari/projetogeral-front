@@ -21,8 +21,8 @@ node {
         echo env.PATH
         sh "node -v"
         sh "npm -v"
-        sh "npm i -g @angular/cli@7.0.4"
-        sh "npm rebuild node-sass --force"
+        sh "npm i -g @angular/cli@7.0.4"        
+        sh "ng -v"
     }
 
     stage "npm install"
