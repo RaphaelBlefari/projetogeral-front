@@ -33,4 +33,20 @@ node {
     stage "Buidando Aplicação"
     
         sh 'ng build'
+
+     stage "Buildando Imagem"
+
+        def customImage = docker.build("${imageName}")
+
+    stage "Push para registry"
+
+        customImage.push()
+
+    stage "Deploy PROD"
+
+        input "Deploy to PROD?"
+        customImage.push('latest')
+        sh "kubectl apply -f https://github.com/RaphaelBlefari/projetogeral-front.git/projetogeral-front.yaml"
+        sh "kubectl set image deployment app app=${imageName} --record"
+        sh "kubectl rollout status deployment/${appName}"
 }
