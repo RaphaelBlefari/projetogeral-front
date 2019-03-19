@@ -11,7 +11,7 @@ node {
     
     // configura o nome da aplicação, o endereço do repositório e o nome da imagem com a versão
     appName = "projetogeral-front"
-    registryHost = "127.0.0.1:30400/"
+    registryHost = "${REGISTRY_SERVICE_HOST}:${REGISTRY_SERVICE_PORT}/"
     imageName = "${registryHost}${appName}:${tag}"
     
     // Configuramos os estágios
