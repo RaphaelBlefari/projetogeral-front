@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: "${REGISTRY_SERVICE_HOST}:${REGISTRY_SERVICE_PORT}/projetogeral-front:latest"
+          image: "registry/projetogeral-front:latest"
           imagePullPolicy: Always
           ports:
             - name: http
