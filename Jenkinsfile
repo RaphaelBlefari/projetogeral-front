@@ -11,13 +11,14 @@ node {
     
     // configura o nome da aplicação, o endereço do repositório e o nome da imagem com a versão
     appName = "projetogeral-front"
-    registryHost = "registry/"
+    registryHost = "registry:5000/"
     imageName = "${registryHost}${appName}:${tag}"
     
     // Configuramos os estágios
     
 
     stage('check tools') {
+
         echo env.PATH
         sh "node -v"
         sh "npm -v"
