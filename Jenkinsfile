@@ -15,6 +15,7 @@ node {
     imageName = "${registryHost}${appName}:${tag}"
     
     // Configuramos os estágios
+    // Configuramos os estágios
     
 
     stage('check tools') {
