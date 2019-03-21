@@ -25,7 +25,7 @@ spec:
         app: projetogeral-front
     spec:
       containers:
-        - name: app
+        - name: projetogeral-front
           image: "127.0.0.1:30400/projetogeral-front:latest"
           imagePullPolicy: Always
           ports:
