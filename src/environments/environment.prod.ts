@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api: 'http://localhost:2000'
+  api: 'http://projetogeral-api.raphaelblefari.com.br'
 };
